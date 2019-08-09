@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title }}</title>
+    <link rel="icon" href="{{root}}/favicon.ico" type="image/x-icon">
+    <link rel="alternate" type="application/rss+xml" title="{{title}}" href="{{root}}/feed.xml">
+    <link rel="stylesheet" href="{{root}}/main.css">
+</head>
+<body>
+    <div class="sidebar">
+        <a href="/" title="The homepage of {{title}}" class="logo hasAvatar">
+            <img width="42" height="42" src="{{root}}/avatar.jpg" class="avatar round">
+            <span style="display:block">{{title}}</span>
+        </a>
+
+        <a href="{{root}}/posts/" class="light">archive</a>
+        <a href="{{root}}/about/" class="light">about</a>
+    </div>
+
+    {{ #if page == 'index' }}
+        {{ #for post : posts }}
+            <div class="entry">
+                <a href="{{post.link}}"><h1>{{ post.name }}</h1></a>
+                {{ post.body | noescape }}
+            </div>
+            <div class="light">
+                <a href="{{post.link}}">{{post.date_pretty}}</a>
+                {{ #for tag: post.tags }}
+                · <a href="/tagged/{{tag}}">{{tag}}</a>
+                {{ #end }}
+            </div>
+            <hr class="full"/>
+        {{ #end }}
+    {{ #elif page == 'archive' }}
+        <h1>Archives</h1>
+        <div class="entry">
+            {{ #for post : posts }}
+                <a href="{{root}}/{{post.link}}">{{post.name}}</a> <span class="light">{{ post.date_pretty }}</span><br>
+            {{ #end }}
+        </div>
+    {{ #elif page == 'post' }}
+        <div class="entry">
+            <h1>{{ post.name }}</h1>
+            {{ post.body | noescape }}
+        </div>
+        <div class="light">
+            {{post.date_pretty}}
+            {{ #for tag: post.tags }}
+            · <a href="/tagged/{{tag}}">{{tag}}</a>
+            {{ #end }}
+        </div>
+    {{ #end }}
+</body>
+</html>

@@ -88,6 +88,13 @@ def command_compile(args):
         content = template.render(page='post', post=post)
         save('posts/{}/index.html'.format(post.slug), content)
 
+    for pagepath in glob.glob(path('pages', '*')):
+        slug, _ = os.path.splitext(os.path.basename(pagepath))
+        with open(pagepath) as f:
+            body = commonmark.commonmark(f.read())
+        content = template.render(page='page', body=body)
+        save('{}/index.html'.format(slug), content)
+
     # copy assets
     print('copying assets:')
 
@@ -98,7 +105,7 @@ def command_compile(args):
 
 def command_preview(args):
     def watchfiles():
-        lasttime = time.time()
+        lasttime = 0
         while True:
             for dirname in ['files', 'pages', 'posts', 'theme']:
                 for filepath in glob.iglob(path(dirname, '*'), recursive=True):

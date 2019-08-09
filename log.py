@@ -1,16 +1,20 @@
 #!/usr/bin/env python3
 import argparse
-import commonmark
 import collections
+import commonmark
 import datetime
+import functools
 import glob
+import http.server
 import misai
 import os
 import re
-import textwrap
-import yaml
 import shutil
+import textwrap
+import threading
+import time
 import webbrowser
+import yaml
 
 
 BASEDIR = os.path.dirname(os.path.abspath(__file__))
@@ -93,7 +97,27 @@ def command_compile(args):
 
 
 def command_preview(args):
+    def watchfiles():
+        lasttime = time.time()
+        while True:
+            for dirname in ['files', 'pages', 'posts', 'theme']:
+                for filepath in glob.iglob(path(dirname, '*'), recursive=True):
+                    if os.stat(filepath).st_mtime > lasttime:
+                        command_compile(None)
+                        lasttime = time.time()
+                        break
+            time.sleep(1)
+
+    watchthread = threading.Thread(target=watchfiles, daemon=True)
+    watchthread.start()
+    address = ('127.0.0.1', 8000)
+    handler = functools.partial(
+        http.server.SimpleHTTPRequestHandler,
+        directory=path('_out'))
+    print('** starting server on http://%s:%d' % address)
     webbrowser.open('http://localhost:8000/')
+    httpd = http.server.HTTPServer(address, handler)
+    httpd.serve_forever()
 
 
 def main():

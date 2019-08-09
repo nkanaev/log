@@ -21,13 +21,13 @@
 
     {{ #if page == 'index' }}
         {{ #for post : posts }}
+            <h1><a href="{{ post.link }}">{{ post.name }}</a></h1>
             <div class="entry">
-                <a href="{{post.link}}"><h1>{{ post.name }}</h1></a>
                 {{ post.body | noescape }}
             </div>
             <div class="light">
-                <a href="{{post.link}}">{{post.date_pretty}}</a>
-                {{ #for tag: post.tags }}
+                <a href="{{ post.link }}">{{ post.date_pretty }}</a>
+                {{ #for tag : post.tags }}
                 · <a href="/tagged/{{tag}}">{{tag}}</a>
                 {{ #end }}
             </div>
@@ -41,8 +41,8 @@
             {{ #end }}
         </div>
     {{ #elif page == 'post' }}
+        <h1>{{ post.name }}</h1>
         <div class="entry">
-            <h1>{{ post.name }}</h1>
             {{ post.body | noescape }}
         </div>
         <div class="light">

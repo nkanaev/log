@@ -20,11 +20,11 @@ TO DO:
 */
 
 body {
-  font: 14px / 1.8 Verdana, 'Bitstream Vera Sans', sans-serif;
+  font: 13px / 1.8 Verdana, 'Bitstream Vera Sans', sans-serif;
   color: #111;
   word-wrap: break-word; /* for long words & urls */
   position: relative;
-  width: 425px;
+  width: 500px;
   margin: 7em auto;
   padding: 0 74px 0 222px;
 }
@@ -49,7 +49,7 @@ h1 + .light:empty {display: none;}
   font-family: 'Gill Sans MT', 'Gill Sans', 'Gill Sans Std', Verdana, 'Bitstream Vera Sans', sans-serif;
 }
 
-.sidebar, h1 a, h2, h3, h4, h5, h6 {
+.sidebar, h2, h3, h4, h5, h6 {
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 1.7325px;
@@ -57,6 +57,7 @@ h1 + .light:empty {display: none;}
 
 .sidebar a {display: block;}
 
+/*
 h1 a {font-size: 13px;position:relative}
 
 h1 a:after {
@@ -66,6 +67,7 @@ h1 a:after {
   position: relative;
   left: 0.33em;
 }
+*/
 
 .adjacent {
   font-size: .91em;
@@ -159,17 +161,11 @@ blockquote {
 }
 
 .entry a {
-  text-decoration: none;
-  text-shadow: .03em 0 #fff,-.03em 0 #fff,0 .03em #fff,0 -.03em #fff,.06em 0 #fff,-.06em 0 #fff,.09em 0 #fff,-.09em 0 #fff,0 .03em #fff,0 -.03em #fff,0 .06em #fff,0 -.06em #fff;
-  background-image: linear-gradient(#fff,#fff),linear-gradient(#fff,#fff),linear-gradient(#555,#555);
-  background-size: 0 0,0 0,.1em .1em;
-  background-repeat: no-repeat,no-repeat,repeat-x;
-  background-position: 0 90%,100% 100%,0 100%;
+  text-decoration: underline;
 }
 
-.entry a:hover {
-  color: blue;
-  background-image: linear-gradient(#fff, #fff), linear-gradient(#fff, #fff), linear-gradient(blue, blue);
+a:hover {
+  color: #468cc7;
 }
 
 .entry a::selection {

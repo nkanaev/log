@@ -41,7 +41,9 @@ def command_newpost(args):
 
 
 def command_compile(args):
-    Post = collections.namedtuple('Post', 'name slug date date_pretty tags body link'.split())
+    Post = collections.namedtuple(
+        'Post',
+        'name slug date date_pretty date_rfc822 guid tags body link'.split())
 
     def read_post(filepath):
         with open(filepath) as f:
@@ -53,22 +55,29 @@ def command_compile(args):
         basename, _ = os.path.splitext(os.path.basename(filepath))
         date, slug = basename.split('-', 1)
         date = datetime.datetime.strptime(date, '%Y%m%d')
-        link = 'posts/' + slug + '/'
+        link = '/posts/' + slug + '/'
 
         return Post(
-            name=meta['name'], tags=meta['tags'],
-            slug=slug, date=date, date_pretty=date.strftime('%B %d, %Y'),
+            name=meta['name'], tags=meta['tags'], slug=slug,
+            date=date,
+            date_pretty=date.strftime('%B %d, %Y'),
+            date_rfc822=date.strftime('%a, %d %b %Y %H:%M:%S UT'),
+            guid=os.path.basename(filepath),
             body=body, link=link)
 
     posts = [read_post(filepath) for filepath in glob.glob(path('posts/*.md'))]
     posts.sort(key=lambda p: p.date, reverse=True)
 
     sitemeta = {
+        'host': 'https://nkanaev.github.io',
         'root': '',
         'posts': posts,
         'title': '256 shades of gray',
     }
-    template = misai.Loader(path('theme'), locals=sitemeta).get('main.html')
+
+    templateloader = misai.Loader(path('theme'), locals=sitemeta)
+    template = templateloader.get('main.html')
+    feed = templateloader.get('feed.xml')
 
     def copy(pattern, dst):
         for f in glob.glob(path(pattern)):
@@ -83,6 +92,7 @@ def command_compile(args):
             f.write(content)
 
     save('index.html', template.render(page='index', posts=posts[:10]))
+    save('feed.xml', feed.render(posts=posts[:10]))
     save('posts/index.html', template.render(page='archive'))
     for post in posts:
         content = template.render(page='post', post=post)

@@ -17,6 +17,7 @@
 
         <a href="{{root}}/posts/" class="light">archive</a>
         <a href="{{root}}/about/" class="light">about</a>
+        <a href="{{root}}/feed.xml" class="light">feed</a>
     </div>
 
     {{ #if page == 'index' }}
@@ -34,7 +35,7 @@
             <hr class="full"/>
         {{ #end }}
     {{ #elif page == 'archive' }}
-        <h1>Archives</h1>
+        <h1>Archive</h1>
         <div class="entry">
             {{ #for post : posts }}
                 <a href="{{root}}/{{post.link}}">{{post.name}}</a> <span class="light">{{ post.date_pretty }}</span><br>

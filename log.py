@@ -9,7 +9,9 @@ import http.server
 import misai
 import os
 import re
+import shlex
 import shutil
+import subprocess
 import textwrap
 import threading
 import time
@@ -137,6 +139,19 @@ def command_preview(args):
     httpd.serve_forever()
 
 
+def command_publish(args):
+    command_compile(None)
+
+    os.chdir(path('_out'))
+
+    run = lambda cmd: subprocess.call(shlex.split(cmd))
+    run('git init')
+    run('git add .')
+    run('git commit -m "{}"'.format(datetime.datetime.now().strftime('%c')))
+    run('git remote add origin git@github.com:nkanaev/nkanaev.github.io.git')
+    run('git push origin -uf master')
+
+
 def main():
     parser = argparse.ArgumentParser()
 
@@ -151,6 +166,9 @@ def main():
 
     cmd_preview = cmds.add_parser('preview')
     cmd_preview.set_defaults(func=command_preview)
+
+    cmd_publish = cmds.add_parser('publish')
+    cmd_publish.set_defaults(func=command_publish)
 
     args = parser.parse_args()
     args.func(args)

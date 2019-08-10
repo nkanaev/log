@@ -38,7 +38,7 @@
         <h1>Archive</h1>
         <div class="entry">
             {{ #for post : posts }}
-                <a href="{{root}}/{{post.link}}">{{post.name}}</a> <span class="light">{{ post.date_pretty }}</span><br>
+                <a href="{{root}}{{post.link}}">{{post.name}}</a> <span class="light">{{ post.date_pretty }}</span><br>
             {{ #end }}
         </div>
     {{ #elif page == 'post' }}

@@ -158,19 +158,8 @@ blockquote {
 }
 
 a:hover {
-  color: #468cc7;
+  color: steelblue;
 }
-
-.entry a::selection {
-  background: #b3d4fd;
-  text-shadow: .03em 0 #b3d4fd, -.03em 0 #b3d4fd, 0 .03em #b3d4fd, 0 -.03em #b3d4fd, .06em 0 #b3d4fd, -.06em 0 #b3d4fd, .09em 0 #b3d4fd, -.09em 0 #b3d4fd, .12em 0 #b3d4fd, -.12em 0 #b3d4fd;
-}
-
-.entry a::-moz-selection {
-  background: #b3d4fd;
-  text-shadow: .03em 0 #b3d4fd, -.03em 0 #b3d4fd, 0 .03em #b3d4fd, 0 -.03em #b3d4fd, .06em 0 #b3d4fd, -.06em 0 #b3d4fd, .09em 0 #b3d4fd, -.09em 0 #b3d4fd, .12em 0 #b3d4fd, -.12em 0 #b3d4fd;
-}
-
 
 /* Tables */
 

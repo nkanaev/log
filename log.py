@@ -74,7 +74,8 @@ def command_compile(args):
         'host': 'https://nkanaev.github.io',
         'root': '',
         'posts': posts,
-        'title': '256 shades of grey',
+        'title': None,
+        'sitetitle': '256 shades of grey',
     }
 
     templateloader = misai.Loader(path('theme'), locals=sitemeta)
@@ -95,9 +96,9 @@ def command_compile(args):
 
     save('index.html', template.render(page='index', posts=posts[:10]))
     save('feed.xml', feed.render(posts=posts[:10]))
-    save('posts/index.html', template.render(page='archive'))
+    save('posts/index.html', template.render(title='Archive', page='archive'))
     for post in posts:
-        content = template.render(page='post', post=post)
+        content = template.render(title=post.name, page='post', post=post)
         save('posts/{}/index.html'.format(post.slug), content)
 
     for pagepath in glob.glob(path('pages', '*')):

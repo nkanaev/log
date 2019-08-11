@@ -3,16 +3,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ title }}</title>
+    <title>{{ #if title }}{{ title }} | {{ #end }}{{ sitetitle }}</title>
     <link rel="icon" href="{{root}}/favicon.ico" type="image/x-icon">
-    <link rel="alternate" type="application/rss+xml" title="{{title}}" href="{{root}}/feed.xml">
+    <link rel="alternate" type="application/rss+xml" title="{{sitetitle}}" href="{{root}}/feed.xml">
     <link rel="stylesheet" href="{{root}}/main.css">
 </head>
 <body>
     <div class="sidebar">
-        <a href="/" title="The homepage of {{title}}" class="logo hasAvatar">
+        <a href="/" title="The homepage of {{sitetitle}}" class="logo hasAvatar">
             <img width="42" height="42" src="{{root}}/avatar.jpg" class="avatar round">
-            <span style="display:block">{{title}}</span>
+            <span style="display:block">{{sitetitle}}</span>
         </a>
 
         <a href="{{root}}/posts/" class="light">archive</a>

@@ -74,7 +74,7 @@ def command_compile(args):
         'host': 'https://nkanaev.github.io',
         'root': '',
         'posts': posts,
-        'title': '256 shades of gray',
+        'title': '256 shades of grey',
     }
 
     templateloader = misai.Loader(path('theme'), locals=sitemeta)

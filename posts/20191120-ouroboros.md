@@ -1,5 +1,5 @@
 ---
-name: Writing ouroboros quine
+name: Writing an ouroboros quine
 slug: ouroboros
 tags: [code, unix]
 ---

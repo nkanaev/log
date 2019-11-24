@@ -179,7 +179,15 @@ img {max-width: 100%;height: auto;}
 pre {
   padding: 0.7em 1em;
   margin: 0 -1em;
-  background: rgba(0,0,0,0.03)
+  background: rgba(0,0,0,0.03);
+  border-radius: 3px;
+  overflow-x: scroll;
+}
+
+p code {
+  padding: 0.1em 0.3em;
+  background: rgba(0,0,0,0.06);
+  border-radius: 3px;
 }
 
 pre, code {font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, monospace;}

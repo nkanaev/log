@@ -26,7 +26,7 @@ If you run it, you should get the result below:
 $ cc ouroboros.c -o ouroboros
 $ ./ouroboros > ouroboros.go
 $ go run ouroboros.go > ouroboros2.c
-$ diff ouroboros.c ouroboros2.c && cowsay "wtf?
+$ diff ouroboros.c ouroboros2.c && cowsay "wtf?"
  ______ 
 < wtf? >
  ------ 
@@ -130,7 +130,7 @@ return 0;
 
 The variable `g` now contains the template Go code. 
 The trick here is making sure that the variable for Go code
-should contain `%s` and <code>&#96;</code>, but implicitly.
+contains `%s` and <code>&#96;</code>, but implicitly.
 The former needs to be used in the next `sprintf` call to do the substitution,
 and the latter can't be explicit because back-quoted strings in Go cannot contain
 back-quote characters.

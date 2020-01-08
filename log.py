@@ -172,6 +172,9 @@ def main():
     cmd_publish.set_defaults(func=command_publish)
 
     args = parser.parse_args()
+    if not getattr(args, 'func', None):
+        parser.print_usage()
+        return
     args.func(args)
 
 

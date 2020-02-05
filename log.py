@@ -33,11 +33,12 @@ def command_newpost(args):
     with open(fullname, 'w') as f:
         f.write(textwrap.dedent('''
             ---
-            name: {name}
+            name: Post Title
+            slug: {name}
             tags: []
             ---
 
-            content
+            Post content
         '''.format(name=args.filename)).strip())
     print('done')
 

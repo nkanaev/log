@@ -1,23 +1,3 @@
-/*
-
-TO DO:
-
-- fix issue with long lines of code (see rnorth)
-- tweak alignment of header for blogs with no avatar
-- fix huge text bug on mobile safari
-  <meta name="viewport" content="width=device-width; initial-scale=1.0;" />
-  @media screen and (max-device-width: 480px){
-    body{
-      -webkit-text-size-adjust: none;
-    }
-  }
-- move away from weird background hack for links
-- add :visited :hover states for links
-- consolidate and abstract colors to make this themeable
-- move from pixels to percent for font size
-
-*/
-
 body {
   font: 13px / 1.8 Verdana, 'Bitstream Vera Sans', sans-serif;
   color: #111;
@@ -35,12 +15,12 @@ body {
   text-align:right;
 }
 
-.light {color: #8a8a8a}
+.light { color: #8a8a8a; }
 
 .entry + .light {margin: 1.7em 0}
 
-h1 + .light {margin-top: -1em}
-h1 + .light:empty {display: none;}
+h1 + .light { margin-top: -1em }
+h1 + .light:empty { display: none; }
 
 .sidebar, h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
@@ -55,28 +35,6 @@ h1 + .light:empty {display: none;}
 }
 
 .sidebar a {display: block;}
-
-/*
-h1 a {font-size: 13px;position:relative}
-
-h1 a:after {
-  content: "→";
-  margin: 0 -1em 0 0;
-  line-height: 1.3;
-  position: relative;
-  left: 0.33em;
-}
-*/
-
-.adjacent {
-  font-size: .91em;
-  display: inline-block;
-  width: 91px;
-  text-align: right;
-  margin-right: 11px;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-}
 
 h1 {
   font-size: 1.55em;
@@ -106,26 +64,26 @@ hr {
 hr.full {
   color: #ccc;
   margin: 7em 0 11em 1em; /* We add 1em to the left due to letter spacing*/
-  height: 0;
+  height: 2em;
   width: 100%;
   text-align: center;
   border: none;
   letter-spacing: 2em;
 }
 
-hr.full:after {content: "··•··";}
+hr.full:after { content: "··•··"; }
 
 .logo {
-  display:block;
+  display: block;
   text-align: right;
   margin-bottom: 3em;
 }
 
 /* We want each word on its own
    line if theres an image */
-.logo.hasAvatar {word-spacing:160px}
+.logo.hasAvatar { word-spacing:160px; }
 
-.avatar {margin: -0.1em 0.1em 0 0}
+.avatar { margin: -0.1em 0.1em 0 0; }
 
 /* Make round avatars slightly bigger for balance */
 .avatar.round {
@@ -134,18 +92,17 @@ hr.full:after {content: "··•··";}
   width: 50px;
 }
 
-.caption, blockquote {color: #676767}
+blockquote { color: #676767 }
 
 ul, ol { padding-left: 0; }
 
-ul {list-style-type: circle}
+ul { list-style-type: circle; }
 
 blockquote {
   margin: 0 1em 0 0.25em;
   padding: 0 .75em 0 1em;
   border-left: 1px solid #dadada
 }
-
 
 /* Styles specific to entry content */
 
@@ -171,7 +128,7 @@ table {
   box-sizing: border-box;
 }
 
-tr {box-sizing: border-box;border-top: 1px solid #dadada;padding: 0}
+tr { box-sizing: border-box;border-top: 1px solid #dadada;padding: 0}
 th, td {box-sizing: border-box;border: 1px solid #dadada;padding: 5px 12px 6px}
 
 img {max-width: 100%;height: auto;}
@@ -190,4 +147,14 @@ p code, ol code, ul code {
   border-radius: 3px;
 }
 
-pre, code {font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, monospace;}
+pre, code { font-family: Menlo, Monaco, monospace; }
+
+@media screen and (max-width: 933px) {
+  body { padding: 0 2em;margin: 2em auto;width: auto; }
+
+  .sidebar { position: relative; width: 100%; text-align: center; margin: 0 0 3em; }
+  .sidebar a { display: inline-block; }
+  .sidebar .logo { margin: 0; display: block; text-align: center; }
+
+  .logo.hasAvatar { word-spacing: 0; }
+}

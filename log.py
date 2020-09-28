@@ -116,6 +116,11 @@ def command_compile(args):
     copy('theme/favicon.ico', path('_out'))
     copy('theme/avatar.jpg', path('_out'))
 
+    print('copying files:')
+
+    os.makedirs(path('_out', 'files'), exist_ok=True)
+    copy('files/*', path('_out', 'files'))
+
 
 def command_preview(args):
     def watchfiles():

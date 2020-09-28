@@ -114,6 +114,12 @@ blockquote {
   text-decoration: underline;
 }
 
+.entry img {
+  margin: 0 -1em;
+  max-width: calc(100% + 2em) !important;
+  border-radius: 3px;
+}
+
 a:hover {
   color: steelblue;
 }

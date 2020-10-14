@@ -5,7 +5,7 @@ tags: [web, unix]
 
 I've decided to create a personal blog. After a few hours of searching for a perfect template, I went with [Rosa theme][rosa-theme]. The only thing I changed (apart from minor cosmetic HTML tweaks) was the link color. I set it to `steelblue`, which is visible when you hover over a link. I don't have time for choosing the perfect color, because I have more important things to spend my time on. 
 
-[rosa-theme]: https://github.com/davidmerfield/Blot/tree/master/app/templates/latest/rosa
+[rosa-theme]: https://github.com/davidmerfield/Blot/tree/d31f2f8c/app/templates/latest/rosa
 
 Which is - finding out where did `steelblue` color come from to CSS. The search of color origins revealed a lot of interesting backstory, forgotten memes and even a tragic loss of the people behind the computing history. 
 

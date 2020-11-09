@@ -83,10 +83,9 @@ def command_compile(args):
     template = templateloader.get('main.html')
     feed = templateloader.get('feed.xml')
 
-    def copy(pattern, dst):
-        for f in glob.glob(path(pattern)):
-            print(' *', os.path.relpath(f, BASEDIR))
-            shutil.copy(f, os.path.join(BASEDIR, dst))
+    def copy(src, dst):
+        print(' *', os.path.relpath(src, BASEDIR))
+        shutil.copy(src, os.path.join(BASEDIR, dst))
 
     def save(filename, content):
         print(' *', filename)
@@ -119,7 +118,20 @@ def command_compile(args):
     print('copying files:')
 
     os.makedirs(path('_out', 'files'), exist_ok=True)
-    copy('files/*', path('_out', 'files'))
+    for dirpath, dirnames, filenames in os.walk(path('files')):
+        for dirname in dirnames:
+            reldirpath = os.path.relpath(os.path.join(dirpath, dirname), path('files'))
+            os.makedirs(path('_out', 'files', reldirpath), exist_ok=True)
+        for filename in filenames:
+            if filename.startswith('.'):
+                continue
+            # /full/path/to/files/foo/bar.txt
+            filepath = os.path.join(dirpath, filename)
+            # files/foo/bar.txt
+            relpath = os.path.relpath(filepath, BASEDIR)
+            # files/foo
+            dirname = os.path.dirname(relpath)
+            copy(relpath, path('_out', dirname))
 
 
 def command_preview(args):

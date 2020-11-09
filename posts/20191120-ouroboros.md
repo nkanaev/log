@@ -138,11 +138,11 @@ back-quote characters.
 The final Python code
 which outputs the C code
 which outputs the Go code
-which outputs the C... you got it, is available [here][experiments-ouroboros].
+which outputs the C... you got it, is available
+<a href="/files/ouroboros/codegen.py">here</a>.
 
 ## Why
 
 Why not?
 
 [rosettacode-quine]: https://rosettacode.org/wiki/Quine
-[experiments-ouroboros]: https://github.com/nkanaev/experiments/tree/master/ouroboros

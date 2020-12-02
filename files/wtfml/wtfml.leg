@@ -1,0 +1,10 @@
+root = (node | _)*
+node = name _ "{" _ (attr | node | text | _)* _ "}"
+attr = word _ ":" _ attx _ ";"
+text = '"' [^\"] '"'
+word = [^ \t\n\r]+
+attx = [^;]*
+
+_    = [ \t]*
+
+%%

@@ -4,7 +4,7 @@ slug: python-json
 tags: []
 ---
 
-It just occured to me that JSON is (with some exceptions)
+It just occured to me that JSON (with some exceptions)
 can be a subset of Python, and parsed as such without the help of `json` module.
 
 Say, if we have a sample JSON, which includes all of the value types
@@ -19,7 +19,8 @@ Say, if we have a sample JSON, which includes all of the value types
 }
 ```
 
-can be parsed by `eval`, by complementing `null`/`true`/`false` with corresponding variables:
+we can parse it using `eval`, by complementing
+`null`/`true`/`false` with corresponding variables:
 
 ```
 # `sample` is a string representation of the above example

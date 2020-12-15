@@ -163,10 +163,12 @@ def command_publish(args):
 
     os.chdir(path('_out'))
 
+    message = datetime.datetime.now().strftime('%c')
+    author = 'Nazar Kanaev <nkanaev@live.com>'
     run = lambda cmd: subprocess.call(shlex.split(cmd))
     run('git init')
     run('git add .')
-    run('git commit -m "{}"'.format(datetime.datetime.now().strftime('%c')))
+    run('git commit -m "{}" --author "{}"'.format(message, author))
     run('git remote add origin git@github.com:nkanaev/nkanaev.github.io.git')
     run('git push origin -uf master')
 

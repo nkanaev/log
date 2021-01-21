@@ -137,14 +137,14 @@ table {
 tr { box-sizing: border-box;border-top: 1px solid #dadada;padding: 0}
 th, td {box-sizing: border-box;border: 1px solid #dadada;padding: 5px 12px 6px}
 
-img {max-width: 100%;height: auto;}
+img {max-width: 100%; height: auto;}
 
 pre {
   padding: 0.7em 1em;
   margin: 0 -1em;
   background: rgba(0,0,0,0.03);
   border-radius: 3px;
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 
 p code, ol code, ul code {

@@ -1,23 +1,23 @@
 body {
-  font: 13px / 1.8 Verdana, 'Bitstream Vera Sans', sans-serif;
+  font: 14px / 1.8 Verdana, 'Bitstream Vera Sans', sans-serif;
   color: #111;
   word-wrap: break-word; /* for long words & urls */
   position: relative;
-  width: 500px;
+  width: 540px;
   margin: 7em auto;
-  padding: 0 74px 0 222px;
 }
 
 .sidebar {
-  width:160px;
-  position:absolute;
-  left:0;
+  width: 120px;
+  position: absolute;
+  left: 0;
+  margin-left: -180px;
   text-align:right;
 }
 
-.light { color: #8a8a8a; }
-
-.entry + .light {margin: 1.7em 0}
+.light {
+  color: #8a8a8a;
+}
 
 h1 + .light { margin-top: -1em }
 h1 + .light:empty { display: none; }
@@ -29,7 +29,7 @@ h1 + .light:empty { display: none; }
 }
 
 .sidebar, h2, h3, h4, h5, h6 {
-  font-size: 12px;
+  font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 1.7325px;
 }
@@ -155,7 +155,7 @@ p code, ol code, ul code {
 
 pre, code { font-family: Menlo, Monaco, monospace; }
 
-@media screen and (max-width: 933px) {
+@media screen and (max-width: 920px) {
   body { padding: 0 2em;margin: 2em auto;width: auto; }
 
   .sidebar { position: relative; width: 100%; text-align: center; margin: 0 0 3em; }

@@ -114,6 +114,7 @@ def command_compile(args):
     copy('theme/main.css', path('_out'))
     copy('theme/favicon.ico', path('_out'))
     copy('theme/avatar.jpg', path('_out'))
+    copy('theme/CNAME', path('_out'))
 
     print('copying files:')
 

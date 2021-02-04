@@ -19,6 +19,10 @@ body {
   color: #8a8a8a;
 }
 
+.entry + .light {
+  margin: 1.7em 0;
+}
+
 h1 + .light { margin-top: -1em }
 h1 + .light:empty { display: none; }
 

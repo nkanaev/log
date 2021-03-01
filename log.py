@@ -72,7 +72,7 @@ def command_compile(args):
     posts.sort(key=lambda p: p.date, reverse=True)
 
     sitemeta = {
-        'host': 'https://nkanaev.github.io',
+        'host': 'https://nkanaev.com',
         'root': '',
         'posts': posts,
         'title': None,

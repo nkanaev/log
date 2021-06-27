@@ -76,7 +76,7 @@ def command_compile(args):
         'root': '',
         'posts': posts,
         'title': None,
-        'sitetitle': '256 shades of grey',
+        'sitetitle': 'nkanaev',
     }
 
     templateloader = misai.Loader(path('theme'), locals=sitemeta)

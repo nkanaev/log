@@ -15,7 +15,6 @@ article h1 a {
 }
 
 article pre {
-  margin: 0 -1rem;
   overflow-x: auto;
   padding: 1rem;
   border: 1px solid #ddd;
@@ -24,20 +23,15 @@ article pre {
 
 article img {
   display: block;
-  width: calc(100% + 2rem);
-  margin: 0 -1rem;
+  width: 100%;
   border-radius: 3px;
 }
 
 article p code {
-  background-color: #e;
+  background-color: #eee;
   border-radius: 3px;
   padding: 0 .25rem;
   font-family: sans-serif;
-}
-
-article ol, article ul {
-  padding-left: 0;
 }
 
 header { margin-bottom: 4rem; }

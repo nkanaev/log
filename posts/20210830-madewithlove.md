@@ -1,0 +1,51 @@
+---
+name: A quine made with love
+slug: madewithlove
+tags: [code]
+---
+
+Here's a simple quine in Python 3:
+
+    import base64;exec(base64.b64decode("""aW1wb3J0IGJhc2U2NApoPSdpb
+    XBvcnQgYmFzZTY0O2V4ZWMoYmFzZTY0LmI2NGRlY29kZSgiIiInCnQ9JyIiIikpJ
+    wp4PSdpbXBvcnQgYmFzZTY0XG5oPSVyXG50PSVyXG54PSVyXG5mcj0lclxuZXI9J
+    XJcbmY9JXNcbmU9JXNcbnByaW50KGgrZihlKHglJShoLHQseCxmcixlcixmcixlc
+    ikpLDY0LWxlbihoKSkrdCknCmZyPSdsYW1iZGEgeCxzOmNocigxMCkuam9pbih4W
+    21heCgwLGktNjQpOmldIGZvciBpIGluIHJhbmdlKHMsbGVuKHgpKzY0LDY0KSknC
+    mVyPSdsYW1iZGEgeDpiYXNlNjQuYjY0ZW5jb2RlKGJ5dGVzKHgsInV0ZjgiKSkuZ
+    GVjb2RlKCknCmY9bGFtYmRhIHgsczpjaHIoMTApLmpvaW4oeFttYXgoMCxpLTY0K
+    TppXSBmb3IgaSBpbiByYW5nZShzLGxlbih4KSs2NCw2NCkpCmU9bGFtYmRhIHg6Y
+    mFzZTY0LmI2NGVuY29kZShieXRlcyh4LCJ1dGY4IikpLmRlY29kZSgpCnByaW50K
+    GgrZihlKHglKGgsdCx4LGZyLGVyLGZyLGVyKSksNjQtbGVuKGgpKSt0KQ=="""))
+
+Just a "brick" that uses base64, which coincidentally has 64 characters per line.
+There's nothing extraordinary in it. It feels soulless and boring.
+
+To stand out, the quine needs a purpose in life. It 
+So the quine tries hard to let it out and convey it's true message:
+
+    import base64,re;exec(base64.b64decode(re.sub(chr(27)+"...","","""aW1wb3J0IGJhc
+    2U2NCxmdW5jdG9vbHMgYXMgRgpoPSdpbXBvcnQgYmFzZTY0LHJlO2V4ZWMoYmFzZTY0LmI2NGRlY29k
+    ZShyZS5zdWIoY2hyKDI3KSsiLi4uIiwiIiwiIiInCnQ9JyIiIikpKSNudXJqYW4nCng9J2ltcG9ydCB
+    iYXNlNjQsZnVuY3Rvb2xzIGFzIEZcbmg9JXJcbnQ9JXJcbng9JXJcbmZyPSVyXG5lcj0lclxuczE9JX
+    JcbnMyPSVyXG5PPSVyXG5MPSVyXG5mPSVzXG5lPSVzXG5vPWgrZihlKHglJShoLHQseCxmcixlcixzM
+    SxzMixPLEwsZnIsZXIsczEsczIsTyxMKSksNzktbGVuKGgpKSt0XG5zPSVzXG5zPSVzXG5vbz0lc1xu
+    JXNcbnByaW50KGNocigxMCkuam9pbihvbykpJwpmcj0nbGFtYmRhIHgsczpjaHIoMTApLmpvaW4oeFt
+    tYXgoMCxpLTc5KTppXSBmb3IgaSBpbiByYW5nZShzLGxlbih4KSs3OSw3OSkpJwplcj0nbGFtYmRhIH
+    g6YmFzZTY0LmI2NGVuY29kZShieXRlcyh4LCJ1dGY4IikpLmRlY29kZSgpJwpzMT0nWyhyLGMsYysxK
+    SBmb3Igcix5IGluIGVudW1lcmF0ZShyYW5nZSgxNCwtMTUsLTEpKSBmb3IgYyx4IGluIGVudW1lcmF0
+    ZShyYW5nZSgrNzkvLzIsLTc5Ly8yLC0xKSlpZih4KngreSp5KjQtMjAwKSoqMzx4KngqeSoqMyozMDB
+    dJwpzMj0nRi5yZWR1Y2UobGFtYmRhIHMscDpzWzotMV0rWyhwWzBdLHNbLTFdWzFdLHBbMl0pXWlmIH
+    MgYW5kIHNbLTFdWzJdPT1wWzFdIGVsc2UgcytbcF0sIHMsIFtdKScKTz0nby5zcGxpdGxpbmVzKCk7S
+    T1sYW1iZGEgbyxyLHMsZTpvWzpyXStbb1tyXVs6c10rIlx4MWJbNW0iK29bcl1bczplXSsiXHgxYlsw
+    bSIrb1tyXVtlOl1dK29bcisxOl0nCkw9J2ZvciByLHMsZSBpbiByZXZlcnNlZChzKTpvbz1JKG9vLHI
+    scyxlKScKZj1sYW1iZGEgeCxzOmNocigxMCkuam9pbih4W21heCgwLGktNzkpOmldIGZvciBpIGluIH
+    JhbmdlKHMsbGVuKHgpKzc5LDc5KSkKZT1sYW1iZGEgeDpiYXNlNjQuYjY0ZW5jb2RlKGJ5dGVzKHgsI
+    nV0ZjgiKSkuZGVjb2RlKCkKbz1oK2YoZSh4JShoLHQseCxmcixlcixzMSxzMixPLEwsZnIsZXIsczEs
+    czIsTyxMKSksNzktbGVuKGgpKSt0CnM9WyhyLGMsYysxKSBmb3Igcix5IGluIGVudW1lcmF0ZShyYW5
+    nZSgxNCwtMTUsLTEpKSBmb3IgYyx4IGluIGVudW1lcmF0ZShyYW5nZSgrNzkvLzIsLTc5Ly8yLC0xKS
+    lpZih4KngreSp5KjQtMjAwKSoqMzx4KngqeSoqMyozMDBdCnM9Ri5yZWR1Y2UobGFtYmRhIHMscDpzW
+    zotMV0rWyhwWzBdLHNbLTFdWzFdLHBbMl0pXWlmIHMgYW5kIHNbLTFdWzJdPT1wWzFdIGVsc2Ugcytb
+    cF0sIHMsIFtdKQpvbz1vLnNwbGl0bGluZXMoKTtJPWxhbWJkYSBvLHIscyxlOm9bOnJdK1tvW3JdWzp
+    zXSsiG1s1bSIrb1tyXVtzOmVdKyIbWzBtIitvW3JdW2U6XV0rb1tyKzE6XQpmb3IgcixzLGUgaW4gcm
+    V2ZXJzZWQocyk6b289SShvbyxyLHMsZSkKcHJpbnQoY2hyKDEwKS5qb2luKG9vKSk=""")))#nurjan

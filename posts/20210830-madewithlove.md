@@ -18,11 +18,9 @@ Here's a simple quine in Python 3:
     mFzZTY0LmI2NGVuY29kZShieXRlcyh4LCJ1dGY4IikpLmRlY29kZSgpCnByaW50K
     GgrZihlKHglKGgsdCx4LGZyLGVyLGZyLGVyKSksNjQtbGVuKGgpKSt0KQ=="""))
 
-Just a "brick" that uses base64, which coincidentally has 64 characters per line.
-There's nothing extraordinary in it. It feels soulless and boring.
+Just a "brick" that relies on base64, which coincidentally has 64 characters per line.
 
-To stand out, the quine needs a purpose in life. It 
-So the quine tries hard to let it out and convey it's true message:
+There was something missing in it. So I made another one, this time with love:
 
     import base64,re;exec(base64.b64decode(re.sub(chr(27)+"...","","""aW1wb3J0IGJhc
     2U2NCxmdW5jdG9vbHMgYXMgRgpoPSdpbXBvcnQgYmFzZTY0LHJlO2V4ZWMoYmFzZTY0LmI2NGRlY29k
@@ -49,3 +47,12 @@ So the quine tries hard to let it out and convey it's true message:
     cF0sIHMsIFtdKQpvbz1vLnNwbGl0bGluZXMoKTtJPWxhbWJkYSBvLHIscyxlOm9bOnJdK1tvW3JdWzp
     zXSsiG1s1bSIrb1tyXVtzOmVdKyIbWzBtIitvW3JdW2U6XV0rb1tyKzE6XQpmb3IgcixzLGUgaW4gcm
     V2ZXJzZWQocyk6b289SShvbyxyLHMsZSkKcHJpbnQoY2hyKDEwKS5qb2luKG9vKSk=""")))#nurjan
+
+It isn't a quine per se, but becomes one when the message is revealed:
+
+    # save the content above as quine.py
+    $ python3 --version
+    3.8.11
+    $ python3 quine.py > quine2.py
+    $ python3 quine2.py > quine3.py
+    $ diff quine2.py quine3.py

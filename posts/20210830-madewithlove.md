@@ -54,5 +54,5 @@ It isn't a quine per se, but becomes one when the message is revealed:
     $ python3 --version
     3.8.11
     $ python3 quine.py > quine2.py
-    $ python3 quine2.py > quine3.py
-    $ diff quine2.py quine3.py
+    $ python3 quine2.py | diff - quine2.py
+    $ cat quine2.py

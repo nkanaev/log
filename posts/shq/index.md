@@ -1,7 +1,7 @@
 ---
 name: Writing a syntax-highlighted quine in Go
-slug: shq
-tags: [code]
+date: 2020-09-28
+tags: code, c, go
 ---
 
 I wrote a code in Go. It's fixed-width, nicely commented and
@@ -47,7 +47,7 @@ default: return "\x1b[0;1m"+x+"\x1b[0m"} })); /* keyword    */}
 Right, forgot to mention - the output is syntax highlighted.
 Here's how it actually looks like:
 
-![preview](/files/shq/preview.png)
+![preview](./preview.png)
 
 ## how
 

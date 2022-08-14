@@ -1,0 +1,24 @@
+---
+file: feed.xml
+---
+{{- $host := "https://nkanaev.com" -}}
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+    <channel>
+        <title>nkanaev</title>
+        <link>{{$host}}/feed.xml</link>
+        {{range .Pages}}
+            {{if .Meta.date}}
+            <item>
+                <title>{{.Meta.Name}}</title>
+                <link>{{$host}}{{.Url}}</link>
+                <guid isPermaLink="false">{{.Url}}</guid>
+                <pubDate>
+                {{post.date_rfc822}}
+                    {{- .Page.Meta.date | dateformat "rfc3339" "rfc822" -}}
+                </pubDate>
+            </item>
+            {{end}}
+        {{end}}
+    </channel>
+</rss>

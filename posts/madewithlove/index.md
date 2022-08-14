@@ -1,7 +1,7 @@
 ---
 name: A quine made with love
-slug: madewithlove
-tags: [code]
+date: 2021-08-30
+tags: code, python
 ---
 
 Here's a simple quine in Python 3:

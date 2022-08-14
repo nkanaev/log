@@ -1,7 +1,7 @@
 ---
 name: Writing a polyglot script
-slug: polyglot
-tags: [code]
+date: 2020-01-08
+tags: code, python
 ---
 
 So here's the thing - I'm relatively good at Python. I somewhat know Ruby.

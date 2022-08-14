@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        {{- if .Page.Meta.name -}}
+            {{ .Page.Meta.name }} | nkanaev
+        {{- else -}}
+            nkanaev
+        {{- end -}}
+    </title>
+    <link rel="stylesheet" href="/main.css">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <a href="/">nkanaev</a>
+        {{if not (eq .Page.Meta.type "index")}}
+        / <span>{{ .Page.Meta.name }}</span>
+        {{end}}
+    </header>
+    <article>
+        {{ .Page.HTML }}
+    </article>
+
+    {{if eq .Page.Meta.type "index" }}
+    <article style="margin-top: 4rem;">
+        {{range .Pages}}
+            {{if .Meta.date}}
+            <span>
+                <a href="{{.Url}}">{{.Meta.name}}</a>
+                <span class="light">
+                {{- .Meta.date | dateformat "yyyy-mm-dd" "shortdate" -}}
+                </span><br>
+            </span>
+            {{end}}
+        {{end}}
+    </article>
+    {{end}}
+
+    {{if .Page.Meta.date}}
+    <footer class="light">
+        {{- .Page.Meta.date | dateformat "yyyy-mm-dd" "shortdate" -}}
+    </footer>
+    {{end}}
+</body>
+</html>

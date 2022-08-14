@@ -1,7 +1,7 @@
 ---
 name: Treating JSON as Python
-slug: python-json
-tags: []
+date: 2020-12-15
+tags: python
 ---
 
 It just occured to me that JSON (with some exceptions)

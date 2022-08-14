@@ -1,7 +1,7 @@
 ---
 name: Writing a triple polyglot script
-slug: triple-polyglot
-tags: [code]
+date: 2020-01-28
+tags: code, python
 ---
 
 In the previous post I've described how to write a script

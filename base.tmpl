@@ -16,7 +16,7 @@
 <body>
     <header>
         <a href="/">nkanaev</a>
-        {{if not (eq .Page.Meta.type "index")}}
+        {{if not (eq .Page.Meta.type "index" "404")}}
         / <span>{{ .Page.Meta.name }}</span>
         {{end}}
     </header>

@@ -1,15 +1,22 @@
-body {
-  margin: 4rem; padding: 0;
-  max-width: 42rem; font: 16px/1.6 sans-serif;
-}
+body { margin: 4rem; padding: 0; max-width: 42rem; font: 16px/1.6 sans-serif; }
 
 @media(max-width: 50rem) {
   body { margin: 4rem auto; padding: 0 2rem; }
 }
 
-h2, h3, h4 { font-size: 1rem; margin-top: 3rem; }
+header  { margin: 4rem 0; }
+section { margin: 4rem 0; }
+footer  { margin: 2rem 0; }
 
-a { color: inherit; }
+a      { color: inherit; }
+.light { color: #aaa; }
+
+article h2,
+article h3,
+article h4 {
+  margin: 3rem 0 0;
+  font-size: 1rem;
+}
 
 article pre {
   overflow-x: auto;
@@ -30,8 +37,3 @@ article p code {
   padding: 0 .25rem;
   font-family: sans-serif;
 }
-
-header { margin-bottom: 4rem; }
-footer { margin-top: 2rem; }
-
-.light { color: #aaa; }

@@ -25,7 +25,7 @@
     </article>
 
     {{if eq .Page.Meta.type "index" }}
-    <article style="margin-top: 4rem;">
+    <section>
         {{range .Pages}}
             {{if .Meta.date}}
             <span>
@@ -36,7 +36,7 @@
             </span>
             {{end}}
         {{end}}
-    </article>
+    </section>
     {{end}}
 
     {{if .Page.Meta.date}}

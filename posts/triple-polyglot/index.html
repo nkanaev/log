@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Writing a triple polyglot script | nkanaev</title>
-    <link rel="stylesheet" href="/main.css">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/theme/main.css">
+    <link rel="icon" href="/theme/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <header>
@@ -15,20 +15,20 @@
         
     </header>
     <article>
-        <p>In the previous post I've described how to write a script
-that's both valid Ruby and Python.
+        <p>In the previous post I&rsquo;ve described how to write a script
+that&rsquo;s both valid Ruby and Python.
 Then I came up with the idea of adding Perl on top if it.</p>
 <p>So, the basic form of the polyglot code (with slight modifications) is this:</p>
 <pre><code>(0 and eval(&quot;puts 1&quot;) or 1) or eval(compile(&quot;print(2)&quot;, &quot;&quot;, &quot;exec&quot;))
 </code></pre>
 <p>Now, if I could find a value that sets Perl apart from Ruby &amp; Python
-and add it to the expression above, I'd be able to run some code via <code>eval</code>.
+and add it to the expression above, I&rsquo;d be able to run some code via <code>eval</code>.
 Luckily, quick google search revealed that <code>&quot;0&quot;</code> is <em>falsey</em> in Perl.
-After a bit of tinkering I've managed to construct something like this:</p>
+After a bit of tinkering I&rsquo;ve managed to construct something like this:</p>
 <pre><code>(0 and (eval(&quot;puts 1&quot;) or 1)) or (&quot;0&quot; and (eval(compile(&quot;print(2)&quot;, &quot;&quot;, &quot;exec&quot;)) or 1)) or eval(&quot;print 3;&quot;)
 </code></pre>
-<p>That's quite a lot of brackets to make non-lisper's eyes bleed,
-so here's the brief summary of what's going on:</p>
+<p>That&rsquo;s quite a lot of brackets to make non-lisper&rsquo;s eyes bleed,
+so here&rsquo;s the brief summary of what&rsquo;s going on:</p>
 <pre><code>(0 and (&lt;ruby_expr&gt; or 1))
   or (&quot;0&quot; and (&lt;python_expr&gt; or 1))
     or &lt;perl_expr&gt;
@@ -39,29 +39,29 @@ so here's the brief summary of what's going on:</p>
 and runs the second expression only (non-empty strings are <em>truthy</em>)</li>
 <li>Perl ignores the first and the second expressions (<code>0</code> and <code>&quot;0&quot;</code> as <em>falsey</em>),
 running only the last expression.</li>
-<li><code>or 1</code> is a &quot;safe-guard&quot; to make sure that the short-circuiting
+<li><code>or 1</code> is a &ldquo;safe-guard&rdquo; to make sure that the short-circuiting
 stops after executing the expression prior to that.</li>
 </ul>
-<h2 id="making-code-readable">making code &quot;readable&quot;</h2>
+<h2 id="making-code-readable">making code &ldquo;readable&rdquo;</h2>
 <p>Again, this is still not enough for me,
 since I wanted placeholders that would let me
-write more &quot;readable&quot; code inside <code>eval</code> calls (read: multiline strings).</p>
+write more &ldquo;readable&rdquo; code inside <code>eval</code> calls (read: multiline strings).</p>
 <p>And this is where I encountered a small problem.
 Python supports multiline strings <em>only</em> via triple-quotes.
 Perl (unlike Ruby) raises syntax error on that. So I needed some workaround.</p>
-<p>The solution was to use <code>q</code> &quot;function&quot; in Perl:</p>
+<p>The solution was to use <code>q</code> &ldquo;function&rdquo; in Perl:</p>
 <pre><code>substr(q(&quot;&quot;&quot;
 &lt;perl_stmts&gt;
 &quot;&quot;&quot;), 3, -3)
 </code></pre>
 <p>Syntax is still valid in 3 languages.
-But there's a catch -  <code>q</code> function does not exist in Ruby and Python,
+But there&rsquo;s a catch -  <code>q</code> function does not exist in Ruby and Python,
 but defining it should be easy using the same techniques described earlier:</p>
 <pre><code>(0 and eval(&quot;def q(x) x end&quot;, binding)) or (&quot;0&quot; and (eval(compile(&quot;def q(x):\n return x&quot;, &quot;&quot;, &quot;exec&quot;)) or 1));
 </code></pre>
-<p>Now we can wrap the rest of the strings in <code>q</code> identity function, and we're done.</p>
-<h2 id="creating-a-practical-application">creating a &quot;practical&quot; application</h2>
-<p>I didn't spend so much time just for nothing, so here's a working fizzbuzz example:</p>
+<p>Now we can wrap the rest of the strings in <code>q</code> identity function, and we&rsquo;re done.</p>
+<h2 id="creating-a-practical-application">creating a &ldquo;practical&rdquo; application</h2>
+<p>I didn&rsquo;t spend so much time just for nothing, so here&rsquo;s a working fizzbuzz example:</p>
 <pre><code>(0 and eval(&quot;def q(x) x end&quot;, binding)) or (&quot;0&quot; and (eval(compile(&quot;def q(x):\n return x&quot;, &quot;&quot;, &quot;exec&quot;)) or 1));
 
 (0 and (eval(q(&quot;&quot;&quot;

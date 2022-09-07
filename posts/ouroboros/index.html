@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Writing an ouroboros quine | nkanaev</title>
-    <link rel="stylesheet" href="/main.css">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/theme/main.css">
+    <link rel="icon" href="/theme/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <header>
@@ -50,9 +50,9 @@ printf(c,10,10,34,c,34,10,10,10,10);
 return 0;
 }
 </code></pre>
-<p>I'm not going to dive into the details - there's a detailed explanation
-on the tricks and examples for writing quines available in <a href="https://rosettacode.org/wiki/Quine">Rosetta Code's wiki page</a>.</p>
-<p>Since I wasn't going to waste my time
+<p>I&rsquo;m not going to dive into the details - there&rsquo;s a detailed explanation
+on the tricks and examples for writing quines available in <a href="https://rosettacode.org/wiki/Quine">Rosetta Code&rsquo;s wiki page</a>.</p>
+<p>Since I wasn&rsquo;t going to waste my time
 hand-crafting the string that should contain the original source code,
 I wrote Python code which generates the C code above:</p>
 <pre><code>quine = r'''#include &lt;stdio.h&gt;
@@ -117,12 +117,12 @@ return 0;
 The trick here is making sure that the variable for Go code
 contains <code>%s</code> and <code>`</code>, but implicitly.
 The former needs to be used in the next <code>sprintf</code> call to do the substitution,
-and the latter can't be explicit because back-quoted strings in Go cannot contain
+and the latter can&rsquo;t be explicit because back-quoted strings in Go cannot contain
 back-quote characters.</p>
 <p>The final Python code
 which outputs the C code
 which outputs the Go code
-which outputs the C... you got it, is available
+which outputs the C&hellip; you got it, is available
 <a href="./codegen.py">here</a>.</p>
 <h2 id="why">Why</h2>
 <p>Why not?</p>

@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>A quine made with love | nkanaev</title>
-    <link rel="stylesheet" href="/main.css">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/theme/main.css">
+    <link rel="icon" href="/theme/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <header>
@@ -15,7 +15,7 @@
         
     </header>
     <article>
-        <p>Here's a simple quine in Python 3:</p>
+        <p>Here&rsquo;s a simple quine in Python 3:</p>
 <pre><code>import base64;exec(base64.b64decode(&quot;&quot;&quot;aW1wb3J0IGJhc2U2NApoPSdpb
 XBvcnQgYmFzZTY0O2V4ZWMoYmFzZTY0LmI2NGRlY29kZSgiIiInCnQ9JyIiIikpJ
 wp4PSdpbXBvcnQgYmFzZTY0XG5oPSVyXG50PSVyXG54PSVyXG5mcj0lclxuZXI9J
@@ -28,7 +28,7 @@ TppXSBmb3IgaSBpbiByYW5nZShzLGxlbih4KSs2NCw2NCkpCmU9bGFtYmRhIHg6Y
 mFzZTY0LmI2NGVuY29kZShieXRlcyh4LCJ1dGY4IikpLmRlY29kZSgpCnByaW50K
 GgrZihlKHglKGgsdCx4LGZyLGVyLGZyLGVyKSksNjQtbGVuKGgpKSt0KQ==&quot;&quot;&quot;))
 </code></pre>
-<p>Just a &quot;brick&quot; that relies on base64, which coincidentally has 64 characters per line.</p>
+<p>Just a &ldquo;brick&rdquo; that relies on base64, which coincidentally has 64 characters per line.</p>
 <p>There was something missing in it. So I made another one, this time with love:</p>
 <pre><code>import base64,re;exec(base64.b64decode(re.sub(chr(27)+&quot;...&quot;,&quot;&quot;,&quot;&quot;&quot;aW1wb3J0IGJhc
 2U2NCxmdW5jdG9vbHMgYXMgRgpoPSdpbXBvcnQgYmFzZTY0LHJlO2V4ZWMoYmFzZTY0LmI2NGRlY29k
@@ -56,7 +56,7 @@ cF0sIHMsIFtdKQpvbz1vLnNwbGl0bGluZXMoKTtJPWxhbWJkYSBvLHIscyxlOm9bOnJdK1tvW3JdWzp
 zXSsiG1s1bSIrb1tyXVtzOmVdKyIbWzBtIitvW3JdW2U6XV0rb1tyKzE6XQpmb3IgcixzLGUgaW4gcm
 V2ZXJzZWQocyk6b289SShvbyxyLHMsZSkKcHJpbnQoY2hyKDEwKS5qb2luKG9vKSk=&quot;&quot;&quot;)))#nurjan
 </code></pre>
-<p>It isn't a quine per se, but becomes one when the message is revealed:</p>
+<p>It isn&rsquo;t a quine per se, but becomes one when the message is revealed:</p>
 <pre><code># save the content above as quine.py
 $ python3 --version
 3.8.11

@@ -11,6 +11,9 @@ footer  { margin: 2rem 0; }
 a      { color: inherit; }
 .light { color: #aaa; }
 
+section ul { list-style-type: circle; padding-inline-start: 1rem; margin: 0; }
+section h2 { margin: 0; font-size: 1rem; }
+
 article h2,
 article h3,
 article h4 {

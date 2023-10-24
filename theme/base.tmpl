@@ -26,16 +26,31 @@
 
     {{if eq .Page.Meta.type "index" }}
     <section>
+        <h2>works</h2>
+        <ul>
         {{range .Pages}}
-            {{if .Meta.date}}
-            <span>
+            {{if hasprefix .RelPath "works/" }}
+            <li>
+                <a href="{{.Url}}">{{.Meta.name}}</a> - {{.Meta.desc}}
+            </li>
+            {{end}}
+        {{end}}
+        </ul>
+    </section>
+    <section>
+        <h2>posts</h2>
+        <ul>
+        {{range .Pages}}
+            {{if hasprefix .RelPath "posts/"}}
+            <li>
                 <a href="{{.Url}}">{{.Meta.name}}</a>
                 <span class="light">
                 {{- .Meta.date | dateformat "yyyy-mm-dd" "shortdate" -}}
                 </span><br>
-            </span>
+            </li>
             {{end}}
         {{end}}
+        </ul>
     </section>
     {{end}}
 

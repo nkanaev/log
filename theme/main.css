@@ -34,9 +34,9 @@ article img, article video {
   border-radius: 3px;
 }
 
-article p code {
+article p code, article ul code {
   background-color: #eee;
   border-radius: 3px;
   padding: 0 .25rem;
-  font-family: sans-serif;
+  font-family: monospace;
 }

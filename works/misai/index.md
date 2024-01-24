@@ -14,6 +14,8 @@ It's loosely inspired by [Jinja] and [mustache]. Sample code is shown below:
 {{ #end }}
 ```
 
+"misai" means _moustache_ in Malay, due to heavy use of curly braces.
+
 _misai_ features:
 
 * loops: `{{ #for i : items }}{{i}}{{ #end }}`

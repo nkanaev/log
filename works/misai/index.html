@@ -15,8 +15,31 @@
         
     </header>
     <article>
-        <p>Simple template engine inspired by mustache and jinja.</p>
-<p><a href="https://github.com/nkanaev/misai">https://github.com/nkanaev/misai</a></p>
+        <p><em>misai</em> is a simple template engine for the Python programming language.
+It&rsquo;s loosely inspired by <a href="https://en.wikipedia.org/wiki/Jinja_(template_engine)">Jinja</a> and <a href="https://en.wikipedia.org/wiki/Mustache_(template_system)">mustache</a>. Sample code is shown below:</p>
+<pre><code>{{ #if logged_in }}
+    {{ #for user : users }}
+        {{ &quot;Hello: &quot; | concat: user.name }}
+    {{ #end }}
+{{ #end }}
+</code></pre>
+<p><em>misai</em> features:</p>
+<ul>
+<li>loops: <code>{{ #for i : items }}{{i}}{{ #end }}</code></li>
+<li>conditionals: <code>{{ #if a }} a {{# elif b }} b {{ #else }} c {{ #end }}</code></li>
+<li>variable assignment: <code>{{ #set i = 123 }}</code></li>
+<li>filters: <code>{{ title | capitalize }}</code></li>
+<li>comparison operators (==, !=, &lt;=, &gt;=, &lt;, &gt;): <code>{{ a &gt; b }}</code></li>
+<li>logical operators (and, or): <code>{{ red or (green and solid) }}</code></li>
+<li>variables: <code>{{ foo }} {{ foo.bar }} {{ foo[&quot;bar&quot;] }}</code></li>
+<li>literals (floats, integers, strings): <code>{{ &quot;str&quot; }} {{ 42 }} {{ 3.14 }}</code></li>
+</ul>
+<p>The project is under 500 LOC, and comes with no external dependencies.
+It implements a context sensitive lexer and a one-pass compiler
+that transforms template to Python bytecode internally.</p>
+<p><em>misai</em> is currently used to render a <a href="https://nkanaev.github.io/zen101/en/">web version</a> of <a href="https://en.wikipedia.org/wiki/101_Zen_Stories">101 Zen Stories</a>,
+a collection of stories compiled by Nyogen Senzaku in the early 20th century.</p>
+<p>Source code: <a href="https://github.com/nkanaev/misai">https://github.com/nkanaev/misai</a></p>
 
     </article>
 

@@ -1,4 +1,11 @@
-body { margin: 4rem; padding: 0; max-width: 42rem; font: 16px/1.6 sans-serif; }
+body {
+  margin: 4rem;
+  padding: 0;
+  max-width: 42rem;
+  font: 16px/1.6 sans-serif;
+  word-wrap: break-word;
+  hyphens: auto;
+}
 
 @media(max-width: 50rem) {
   body { margin: 4rem auto; padding: 0 2rem; }

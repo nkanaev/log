@@ -8,14 +8,19 @@
     <link rel="icon" href="/theme/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <header>
-        <a href="/">nkanaev</a>
-        
-        / <span>Treating JSON as Python</span>
-        
+<div class="wrapper">
+    <header class="sidebar">
+        <a href="/">
+            <img src="/theme/avatar-640w.jpg" class="avatar">
+            256 shades of grey
+        </a>
     </header>
-    <article>
-        <p>It just occured to me that JSON (with some exceptions)
+    <div class="content">
+        <article>
+            
+                <h1>Treating JSON as Python</h1>
+            
+            <p>It just occured to me that JSON (with some exceptions)
 can be a subset of Python, and parsed as such without the help of <code>json</code> module.</p>
 <p>Say, if we have a sample JSON, which includes all of the value types
 (object/array/string/numbers/true/false/null):</p>
@@ -41,12 +46,14 @@ eval(sample, {}, {'null': None, 'true': True, 'false': False})
 And the solution overall isn&rsquo;t safe, and shouldn&rsquo;t be used in a production code.
 Nevertheless, I find the trick interesting.</p>
 
-    </article>
+        </article>
 
-    
+        
 
-    
-    <footer class="light">15 Dec 2020</footer>
-    
+        
+        <footer class="light">15 Dec 2020</footer>
+        
+    </div>
+</div>
 </body>
 </html>

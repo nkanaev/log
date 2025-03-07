@@ -8,14 +8,19 @@
     <link rel="icon" href="/theme/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <header>
-        <a href="/">nkanaev</a>
-        
-        / <span>Writing a syntax-highlighted quine in Go</span>
-        
+<div class="wrapper">
+    <header class="sidebar">
+        <a href="/">
+            <img src="/theme/avatar-640w.jpg" class="avatar">
+            256 shades of grey
+        </a>
     </header>
-    <article>
-        <p>I wrote a code in Go. It&rsquo;s fixed-width, nicely commented and
+    <div class="content">
+        <article>
+            
+                <h1>Writing a syntax-highlighted quine in Go</h1>
+            
+            <p>I wrote a code in Go. It&rsquo;s fixed-width, nicely commented and
 when run, outputs it&rsquo;s own source code:</p>
 <pre><code>package main;import(&quot;fmt&quot;;&quot;strings&quot;;&quot;regexp&quot;);func main(){ x:=(
 `/* ---------------------------------------------------------`+
@@ -103,12 +108,14 @@ Here&rsquo;s the breakdown:</p>
 </li>
 </ol>
 
-    </article>
+        </article>
 
-    
+        
 
-    
-    <footer class="light">28 Sep 2020</footer>
-    
+        
+        <footer class="light">28 Sep 2020</footer>
+        
+    </div>
+</div>
 </body>
 </html>

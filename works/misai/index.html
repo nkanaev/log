@@ -8,14 +8,19 @@
     <link rel="icon" href="/theme/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <header>
-        <a href="/">nkanaev</a>
-        
-        / <span>misai</span>
-        
+<div class="wrapper">
+    <header class="sidebar">
+        <a href="/">
+            <img src="/theme/avatar-640w.jpg" class="avatar">
+            256 shades of grey
+        </a>
     </header>
-    <article>
-        <p><em>misai</em> is a simple template engine for the Python programming language.
+    <div class="content">
+        <article>
+            
+                <h1>misai</h1>
+            
+            <p><em>misai</em> is a simple template engine for the Python programming language.
 It&rsquo;s loosely inspired by <a href="https://en.wikipedia.org/wiki/Jinja_(template_engine)">Jinja</a> and <a href="https://en.wikipedia.org/wiki/Mustache_(template_system)">mustache</a>. Sample code is shown below:</p>
 <pre><code>{{ #if logged_in }}
     {{ #for user : users }}
@@ -42,10 +47,12 @@ that transforms template to Python bytecode internally.</p>
 a collection of stories compiled by Nyogen Senzaku in the early 20th century.</p>
 <p>Source code: <a href="https://github.com/nkanaev/misai">https://github.com/nkanaev/misai</a></p>
 
-    </article>
+        </article>
 
-    
+        
 
-    
+        
+    </div>
+</div>
 </body>
 </html>

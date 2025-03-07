@@ -14,50 +14,57 @@
     <link rel="icon" href="/theme/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <header>
-        <a href="/">nkanaev</a>
-        {{if not (eq .Page.Meta.type "index" "404")}}
-        / <span>{{ .Page.Meta.name }}</span>
-        {{end}}
+<div class="wrapper">
+    <header class="sidebar">
+        <a href="/">
+            <img src="/theme/avatar-640w.jpg" class="avatar">
+            256 shades of grey
+        </a>
     </header>
-    <article>
-        {{ .Page.HTML }}
-    </article>
-
-    {{if eq .Page.Meta.type "index" }}
-    <section>
-        <h2>works</h2>
-        <ul>
-        {{range .Pages}}
-            {{if hasprefix .RelPath "works/" }}
-            <li>
-                <a href="{{.Url}}">{{.Meta.name}}</a> - {{.Meta.desc}}
-            </li>
+    <div class="content">
+        <article>
+            {{if not (eq .Page.Meta.type "index" "404")}}
+                <h1>{{ .Page.Meta.name }}</h1>
             {{end}}
-        {{end}}
-        </ul>
-    </section>
-    <section>
-        <h2>posts</h2>
-        <ul>
-        {{range .Pages}}
-            {{if hasprefix .RelPath "posts/"}}
-            <li>
-                <a href="{{.Url}}">{{.Meta.name}}</a>
-                <span class="light">
-                {{- .Meta.date | dateformat "yyyy-mm-dd" "shortdate" -}}
-                </span><br>
-            </li>
-            {{end}}
-        {{end}}
-        </ul>
-    </section>
-    {{end}}
+            {{ .Page.HTML }}
+        </article>
 
-    {{if .Page.Meta.date}}
-    <footer class="light">
-        {{- .Page.Meta.date | dateformat "yyyy-mm-dd" "shortdate" -}}
-    </footer>
-    {{end}}
+        {{if eq .Page.Meta.type "index" }}
+        <section>
+            <h2>works</h2>
+            <ul>
+            {{range .Pages}}
+                {{if hasprefix .RelPath "works/" }}
+                <li>
+                    <a href="{{.Url}}">{{.Meta.name}}</a> - {{.Meta.desc}}
+                </li>
+                {{end}}
+            {{end}}
+            </ul>
+        </section>
+        <section>
+            <h2>posts</h2>
+            <ul>
+            {{range .Pages}}
+                {{if hasprefix .RelPath "posts/"}}
+                <li>
+                    <a href="{{.Url}}">{{.Meta.name}}</a>
+                    <span class="light">
+                    {{- .Meta.date | dateformat "yyyy-mm-dd" "shortdate" -}}
+                    </span><br>
+                </li>
+                {{end}}
+            {{end}}
+            </ul>
+        </section>
+        {{end}}
+
+        {{if .Page.Meta.date}}
+        <footer class="light">
+            {{- .Page.Meta.date | dateformat "yyyy-mm-dd" "shortdate" -}}
+        </footer>
+        {{end}}
+    </div>
+</div>
 </body>
 </html>

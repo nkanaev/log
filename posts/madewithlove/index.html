@@ -8,14 +8,19 @@
     <link rel="icon" href="/theme/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <header>
-        <a href="/">nkanaev</a>
-        
-        / <span>A quine made with love</span>
-        
+<div class="wrapper">
+    <header class="sidebar">
+        <a href="/">
+            <img src="/theme/avatar-640w.jpg" class="avatar">
+            256 shades of grey
+        </a>
     </header>
-    <article>
-        <p>Here&rsquo;s a simple quine in Python 3:</p>
+    <div class="content">
+        <article>
+            
+                <h1>A quine made with love</h1>
+            
+            <p>Here&rsquo;s a simple quine in Python 3:</p>
 <pre><code>import base64;exec(base64.b64decode(&quot;&quot;&quot;aW1wb3J0IGJhc2U2NApoPSdpb
 XBvcnQgYmFzZTY0O2V4ZWMoYmFzZTY0LmI2NGRlY29kZSgiIiInCnQ9JyIiIikpJ
 wp4PSdpbXBvcnQgYmFzZTY0XG5oPSVyXG50PSVyXG54PSVyXG5mcj0lclxuZXI9J
@@ -65,12 +70,14 @@ $ python3 quine2.py | diff - quine2.py
 $ cat quine2.py
 </code></pre>
 
-    </article>
+        </article>
 
-    
+        
 
-    
-    <footer class="light">30 Aug 2021</footer>
-    
+        
+        <footer class="light">30 Aug 2021</footer>
+        
+    </div>
+</div>
 </body>
 </html>

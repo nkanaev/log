@@ -8,14 +8,19 @@
     <link rel="icon" href="/theme/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <header>
-        <a href="/">nkanaev</a>
-        
-        / <span>It&#39;s quine o&#39;clock</span>
-        
+<div class="wrapper">
+    <header class="sidebar">
+        <a href="/">
+            <img src="/theme/avatar-640w.jpg" class="avatar">
+            256 shades of grey
+        </a>
     </header>
-    <article>
-        <p>I&rsquo;ve recently stumbled upon <a href="http://aem1k.com/qlock/">a javascript quine clock</a>.
+    <div class="content">
+        <article>
+            
+                <h1>It&#39;s quine o&#39;clock</h1>
+            
+            <p>I&rsquo;ve recently stumbled upon <a href="http://aem1k.com/qlock/">a javascript quine clock</a>.
 I had some spare time, which I&rsquo;ve put into a <a href="qlock.py">similar code</a> in Python:</p>
 <pre><code>import re;exec(q:=re.sub(chr(27)+'...','','''import time;((
 r:=&quot;import re;exec(q:=re.sub(chr(27)+'...','',%s%s%s))&quot; % (
@@ -42,12 +47,14 @@ f'{c}{E}[0m')if(x%7!=1 and 0&lt;x&lt;57 and y&gt;1 and(int(('ODREG4'
 )]and(print()or time.sleep(1))for _ in iter(int,1)]) #'''))
 </code></pre>
 
-    </article>
+        </article>
 
-    
+        
 
-    
-    <footer class="light">01 Jun 2024</footer>
-    
+        
+        <footer class="light">01 Jun 2024</footer>
+        
+    </div>
+</div>
 </body>
 </html>

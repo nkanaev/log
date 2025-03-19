@@ -84,7 +84,8 @@ a       { color: inherit; }
 a:hover { color: steelblue; }
 .light  { color: #aaa; }
 
-section ul {
+section ul,
+article ul {
   list-style-type: circle;
   padding-inline-start: 1rem;
   margin: 0;
